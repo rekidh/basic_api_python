@@ -1,13 +1,18 @@
-# from typing import Union  #this line recommendation  from fastapi if you disable no problem
+from typing import Union  
+# #this line recommendation  from fastapi if you disable no problem
 
 from fastapi import FastAPI
+import controllers.Auth as test 
+
+
 
 app = FastAPI()
 
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    h= test.test("request2")
+    return {"Hello": "World","h":{h}}
 
 
 @app.get("/items/{item_id}")
